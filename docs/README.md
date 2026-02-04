@@ -5,19 +5,18 @@ config:
   -
     type: hero
     full: true
-    forceDark: true
-    effect: lightning
+    background: tint-plate
+    tintPlate:  63,164,240
     hero:
-      name: Theme Plume
-      tagline: VuePress Next Theme
-      text: 一个简约的，功能丰富的 vuepress 文档&博客 主题
+      name: DreamCore Server
+      text: 在梦游中建造
       actions:
         -
           theme: brand
-          text: 博客
-          link: /blog/
+          text: 指南
+          link: /guide/
         -
           theme: alt
-          text: Github →
-          link: https://github.com/pengzhanbo/vuepress-theme-plume
+          text: Group →
+          link: https://qm.qq.com/q/ZFBZdr1Y2e
 ---

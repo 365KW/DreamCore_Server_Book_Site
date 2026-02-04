@@ -25,6 +25,7 @@
  * 通过 `defineCollection` 定义的 collection 配置，应该填入 `defineCollections` 中
  */
 import { defineCollection, defineCollections } from 'vuepress-theme-plume'
+import guide from "./guide";
 
 const blog = defineCollection({
   // post 类型，这里用于实现 博客功能
@@ -67,6 +68,5 @@ const demoDoc = defineCollection({
  * (demoDoc 为参考示例，如果不需要它，请删除)
  */
 export default defineCollections([
-  blog,
-  demoDoc,
+  guide
 ])

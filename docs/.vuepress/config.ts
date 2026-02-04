@@ -12,6 +12,7 @@
 import { viteBundler } from '@vuepress/bundler-vite'
 import { defineUserConfig } from 'vuepress'
 import { plumeTheme } from 'vuepress-theme-plume'
+import collections from "./collections/index";
 
 export default defineUserConfig({
   base: '/',
@@ -21,7 +22,7 @@ export default defineUserConfig({
 
   head: [
     // 配置站点图标
-    ['link', { rel: 'icon', type: 'image/png', href: 'https://theme-plume.vuejs.press/favicon-32x32.png' }],
+    ['link', { rel: 'icon', type: 'image/png', href: '/icon.jpg' }],
   ],
 
   bundler: viteBundler(),
@@ -90,13 +91,13 @@ export default defineUserConfig({
      * markdown
      * @see https://theme-plume.vuejs.press/config/markdown/
      */
-    // markdown: {
+     markdown: {
     //   abbr: true,         // 启用 abbr 语法  *[label]: content
     //   annotation: true,   // 启用 annotation 语法  [+label]: content
-    //   pdf: true,          // 启用 PDF 嵌入 @[pdf](/xxx.pdf)
+       pdf: true,          // 启用 PDF 嵌入 @[pdf](/xxx.pdf)
     //   caniuse: true,      // 启用 caniuse 语法  @[caniuse](feature_name)
     //   plot: true,         // 启用隐秘文本语法 !!xxxx!!
-    //   bilibili: true,     // 启用嵌入 bilibili视频 语法 @[bilibili](bid)
+       bilibili: true,     // 启用嵌入 bilibili视频 语法 @[bilibili](bid)
     //   youtube: true,      // 启用嵌入 youtube视频 语法 @[youtube](video_id)
     //   artPlayer: true,    // 启用嵌入 artPlayer 本地视频 语法 @[artPlayer](url)
     //   audioReader: true,  // 启用嵌入音频朗读功能 语法 @[audioReader](url)
@@ -115,12 +116,12 @@ export default defineUserConfig({
     //     kotlin: true,     // ::: kotlin-repl
     //     python: true,     // ::: python-repl
     //   },
-    //   math: {             // 启用数学公式
-    //     type: 'katex',
-    //   },
+       math: {             // 启用数学公式
+         type: 'katex',
+       },
     //   chartjs: true,      // 启用 chart.js
     //   echarts: true,      // 启用 ECharts
-    //   mermaid: true,      // 启用 mermaid
+       mermaid: true,      // 启用 mermaid
     //   flowchart: true,    // 启用 flowchart
     //   image: {
     //     figure: true,     // 启用 figure
@@ -130,7 +131,7 @@ export default defineUserConfig({
     //   },
     //   include: true,      // 在 Markdown 文件中导入其他 markdown 文件内容
     //   imageSize: 'local', // 启用 自动填充 图片宽高属性，避免页面抖动
-    // },
+     },
 
     /**
      * 水印
@@ -173,5 +174,6 @@ export default defineUserConfig({
     // llmstxt: {
     //   locale: '/',    // 默认仅为主语言生成 llms 友好内容
     // }
+    collections
   }),
 })
