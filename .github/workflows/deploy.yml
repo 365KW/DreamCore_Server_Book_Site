@@ -39,6 +39,7 @@ jobs:
       - name: Run tests
         run: npm run docs:build
   deploy:
+    needs: docs
     runs-on: ubuntu-latest
     permissions:
       contents: write   # 允许向gh-pages分支推送
