@@ -26,6 +26,8 @@
  */
 import { defineCollection, defineCollections } from 'vuepress-theme-plume'
 import guide from "./guide";
+import documents from "./documents";
+import archive from "./archive";
 
 const blog = defineCollection({
   // post 类型，这里用于实现 博客功能
@@ -68,5 +70,7 @@ const demoDoc = defineCollection({
  * (demoDoc 为参考示例，如果不需要它，请删除)
  */
 export default defineCollections([
-  guide
+  guide,
+  documents,
+  archive
 ])

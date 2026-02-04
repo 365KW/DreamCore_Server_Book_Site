@@ -14,7 +14,7 @@ config:
         -
           theme: brand
           text: 指南
-          link: /guide/
+          link: /guide/intro/
         -
           theme: alt
           text: Group →

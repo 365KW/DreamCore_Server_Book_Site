@@ -9,10 +9,10 @@ import { defineNavbarConfig } from 'vuepress-theme-plume'
 export default defineNavbarConfig([
   { text: '首页', link: '/' },
   { text: '指南', link: '/guide/' },
-  { text: '文档', link: '/documents/' },
-  { text: '归档', link: '/archive/' },
+  { text: '文档', link: '/documents/to-do/' },
+  { text: '归档', link: '/archive/to-do/' },
   {
     text: '开始游戏',
-    items: [{ text: '加入', link: '/guide/how_to_play.md' }]
+    items: [{ text: '配置游戏', link: '/guide/config_game/' }]
   },
 ])
