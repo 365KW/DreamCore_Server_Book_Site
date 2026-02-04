@@ -1,0 +1,30 @@
+name: Deploy VuePress Site
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm' # 启用 npm 缓存加速
+
+      - name: Install Dependencies
+        run: npm ci # 严格依赖锁定，避免版本漂移
+
+      - name: Build VuePress Site
+        run: npm run docs:build # 对应 package.json 中的构建脚本
+
+      - name: Deploy to Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .vuepress/dist # VuePress 默认输出目录
