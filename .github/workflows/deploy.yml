@@ -10,38 +10,34 @@ on:
 jobs:
   docs:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-        with:
-          # “最近更新时间” 等 git 日志相关信息，需要拉取全部提交记录
-          fetch-depth: 0
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 20
-          cache: 'npm'  # 改为 npm 缓存
-
-      - name: Install dependencies
-        run: npm install  # 改为 npm 安装
-
-      - name: Build
-        run: npm run build  # 改为 npm 构建
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          # 选择要使用的 pnpm 版本
-          version: 10
-          # 使用 pnpm 安装依赖
-          run_install: true
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           # 选择要使用的 node 版本
           node-version: 22
-          # 缓存 pnpm 依赖
-          cache: pnpm
+
+      - uses: actions/checkout@v4
+        with:
+          # “最近更新时间” 等 git 日志相关信息，需要拉取全部提交记录
+          fetch-depth: 0
+
+      - name: Cache npm modules
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm 
+            node_modules
+          key: ${{ runner.os }}-npm-${{ hashFiles('package-lock.json') }}
+
+      # 安装依赖（使用 npm）
+      - name: Install dependencies
+        run: npm ci
+
+      # 运行脚本（使用 npm）
+      - name: Run tests
+        run: npm run docs:build
 
       # 运行构建脚本
       - name: Build VuePress site
