@@ -1,0 +1,29 @@
+<local:MyCard Title="欢迎游玩DreamCoreServer" Margin="0,0,0,15">
+<StackPanel Margin="10,40,23,15">
+        <local:MyHint Text="此页面为离线版本,可能存在过时信息,如有问题请与群内管理员联系" />
+    </StackPanel>
+</local:MyCard>
+
+<local:MyCard Title="实用功能" Margin="0,0,0,15">
+    <StackPanel>
+        <local:MyListItem Margin="5,30,5,8"
+                Logo="pack://application:,,,/images/Blocks/Anvil.png"
+                Title="启动游戏" Info="祝你游戏愉快:)" EventType="启动游戏" Type="Clickable" EventData="DreamCore"/>
+        <local:MyListItem Margin="5,5,5,8"
+                Logo="pack://application:,,,/images/Blocks/GoldBlock.png"
+                Title="启动游戏并自动进入服务器" Info="祝你游戏愉快:)" EventType="启动游戏" Type="Clickable" EventData="DreamCore|121.25.239.251:33968"/>
+        <local:MyListItem Margin="5,5,5,8"
+                Logo="pack://application:,,,/images/Blocks/CommandBlock.png"
+                Title="最新版客户端下载" Info="注:需要先安装客户端才能点击上面的“启动游戏”" EventType="打开网页" Type="Clickable" EventData="http://121.25.239.251:34027/@s/Lw3ZVNKR"/>
+        <local:MyListItem Margin="5,5,5,8"
+                        Logo="pack://application:,,,/images/Blocks/RedstoneLampOn.png"
+                        Title="加入服务器QQ群" Info="真的有人会先看到这行字然后才加群吗?" EventType="打开网页" Type="Clickable" EventData="https://qm.qq.com/q/q3DyisqVG0"/>
+        <local:MyListItem Margin="5,5,5,8"
+                        Logo="pack://application:,,,/images/Blocks/NeoForge.png"
+                        Title="服主的B站主页" Info="玩服务器一定要知道服主是谁!" EventType="打开网页" Type="Clickable" EventData="https://space.bilibili.com/532934301"/> 
+    <StackPanel>                    
+    <local:MyHint Margin="10,0,23,15" Theme="Blue"
+                    Text="由dygm维护" />
+    </StackPanel>
+    </StackPanel>
+</local:MyCard>

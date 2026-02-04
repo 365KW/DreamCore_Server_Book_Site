@@ -1,7 +1,7 @@
 ---
 title: 如何游玩服务器
 createTime: 2026/02/04 00:00:00
-permalink: /guide/enter_server/
+permalink: /guide/config_game/enter_server/
 foo: foo
 ---
 
