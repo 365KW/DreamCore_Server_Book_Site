@@ -50,7 +50,7 @@ export default defineUserConfig({
     cache: 'filesystem',
 
     /**
-     * 为 markdown 文件自动添加 frontmatter 配置
+     * 为 markdown 文件自动添加 frontmatter config
      * @see https://theme-plume.vuejs.press/config/theme/#autofrontmatter
      */
     // autoFrontmatter: {

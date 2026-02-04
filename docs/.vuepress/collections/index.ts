@@ -22,7 +22,7 @@
  * - `defineCollections` 是用于定义 collection 集合的帮助函数
  * - `defineCollection` 是用于定义单个 collection 配置的帮助函数
  *
- * 通过 `defineCollection` 定义的 collection 配置，应该填入 `defineCollections` 中
+ * 通过 `defineCollection` 定义的 collection config，应该填入 `defineCollections` 中
  */
 import { defineCollection, defineCollections } from 'vuepress-theme-plume'
 import guide from "./guide";

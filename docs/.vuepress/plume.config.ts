@@ -20,7 +20,7 @@ import collections from './collections/index'
 export default defineThemeConfig({
   logo: '/icon.jpg',
 
-  appearance: true,  // 配置 深色模式
+  appearance: true,  // config 深色模式
 
   social: [
     { icon: 'github', link: 'https://github.com/365KW/DreamCore_Server_Book_Site' },
