@@ -39,6 +39,13 @@ jobs:
       - name: Run tests
         run: npm run docs:build
 
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: github-pages  # 关键修复：与部署步骤名称一致
+          path: dist  # 替换为实际构建目录（如 docs/.vitepress/dist）
+          retention-days: 1
+
   deploy:
     environment:
       name: github-pages
