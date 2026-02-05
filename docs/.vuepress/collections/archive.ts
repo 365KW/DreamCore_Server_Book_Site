@@ -1,7 +1,7 @@
 import { defineCollection } from 'vuepress-theme-plume'
 
 export default defineCollection({
-    type: 'doc',
+    type: 'post',
     dir: 'archive',
     title: '存档页面' ,
     autoFrontmatter: {
