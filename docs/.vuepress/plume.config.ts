@@ -50,7 +50,7 @@ export default defineThemeConfig({
    * @see https://theme-plume.vuejs.press/config/theme/#profile
    */
   profile: {
-    avatar: 'https://theme-plume.vuejs.press/plume.png',
+    avatar: '/icon.jpg',
     name: 'DreamCore Server',
     description: '在梦游中建造',
     // circle: true,
