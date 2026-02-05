@@ -1,55 +1,37 @@
-name: deploy
+name: Deploy VuePress to GitHub Pages
 
 on:
-  # 每当 push 到 main 分支时触发部署
-  # Deployment is triggered whenever a push is made to the main branch.
   push:
-    branches: [master]
-  # 手动触发部署
-  # Manually trigger deployment
-  workflow_dispatch:
+    branches: [master]  # 触发分支，根据你的仓库实际情况修改
+  workflow_dispatch:    # 支持手动触发
 
 jobs:
-  build_and_deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
         with:
-          # “最近更新时间” 等 git 日志相关信息，需要拉取全部提交记录
-          # "Last updated time" and other git log-related information require fetching all commit records.
-          fetch-depth: 0
+          fetch-depth: 0  # 拉取完整提交历史，用于生成页面更新时间
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          # 选择要使用的 node 版本
-          node-version: 22
+          node-version: 20
 
-      # 安装依赖
-      # Install dependencies
       - name: Install Dependencies
-        run: npm ci
+        run: npm ci  # 使用 package-lock.json 确保依赖版本一致
 
-
-
-      # 运行构建脚本
-      # Run the build script
       - name: Build VuePress site
-        env:
-          NODE_OPTIONS: --max_old_space_size=8192
-        run: npm run docs:build
+        run: npm run docs:build  # 确保与 package.json 中的脚本名称一致
 
-
-      # 查看 workflow 的文档来获取更多信息
-      # @see https://github.com/crazy-max/ghaction-github-pages
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v4
         with:
-          # 部署到 gh-pages 分支
           target_branch: gh-pages
-          # 部署目录为 VuePress 的默认输出目录
           build_dir: docs/.vuepress/dist
+          # 可选：如果你需要保留历史提交，设置为 true
+          keep_history: false
         env:
-          # @see https://docs.github.com/cn/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
+          # 修复：正确引用 GitHub 内置令牌，不需要手动创建
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
