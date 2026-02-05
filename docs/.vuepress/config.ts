@@ -22,7 +22,7 @@ export default defineUserConfig({
 
   head: [
     // 配置站点图标
-    ['link', { rel: 'icon', type: 'image/jpg', href: '/icon.jpg' }],
+    ['link', { rel: 'icon', type: 'image/jpg', href: '/DreamCore_Server_Book_Site/icon.jpg' }],
   ],
 
   bundler: viteBundler(),
@@ -33,15 +33,15 @@ export default defineUserConfig({
     // hostname: 'https://your_site_url',
 
     /* 文档仓库配置，用于 editLink */
-    // docsRepo: '',
-    // docsDir: 'docs',
-    // docsBranch: '',
+     docsRepo: 'https://github.com/365KW/DreamCore_Server_Book_Site/',
+     docsDir: 'docs',
+     docsBranch: 'master',
 
     /* 页内信息 */
-    // editLink: true,
-    // lastUpdated: true,
-    // contributors: true,
-    // changelog: false,
+     editLink: true,
+     // lastUpdated: true,
+     contributors: true,
+     changelog: false,
 
     /**
      * 编译缓存，加快编译速度
