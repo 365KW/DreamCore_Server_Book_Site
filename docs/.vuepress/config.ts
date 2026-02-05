@@ -15,7 +15,7 @@ import { plumeTheme } from 'vuepress-theme-plume'
 import collections from "./collections/index";
 
 export default defineUserConfig({
-  base: '/',
+  base: '/DreamCore_Server_Book_Site/',
   lang: 'zh-CN',
   title: 'DreamCore Server',
   description: '在梦游中建造',
