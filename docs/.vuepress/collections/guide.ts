@@ -14,5 +14,5 @@ export default defineCollection({
         }
     },
     sidebar: 'auto', // 自动生成导航结构
-    sidebarCollapsed: true // 折叠状态：true-折叠 false-展开
+    sidebarCollapsed: false // 折叠状态：true-折叠 false-展开
 })
