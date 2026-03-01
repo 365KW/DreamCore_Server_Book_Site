@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a}from"./app-Nnd7thEM.js";const r={};function n(c,o){return a(),t("div")}const i=e(r,[["render",n]]),l=JSON.parse('{"path":"/archive/","title":"存档页面","lang":"zh-CN","frontmatter":{"lang":"zh-CN","title":"存档页面","draft":true},"readingTime":{"minutes":0,"words":0},"git":{},"filePathRelative":null,"headers":[],"type":"posts"}');export{i as comp,l as data};
